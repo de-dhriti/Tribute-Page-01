@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tribute Page 01A </title>
+    <style type="text/css">
+        html, body {
+            padding         : 0;
+            margin          : 0;
+            font-size       : 100%;
+            font-weight     : normal;
+        }
+        :root {
+            --page-color    : violet;
+            --block1-color  : indigo;
+            --block2-color  : blue;
+            --block3-color  : green;
+            --block4-color  : yellow;
+            --block5-color  : orange;
+            --block6-color  : red;
+        }
+        body {
+            background-color: #2f2f2f;
+        }
+        .box{
+            margin          : 8vh auto;
+            width           : 500px;
+            height          : 80vh;
+            padding: 1vh;
+            background-color: #2f2f2f;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            z-index: 20;
+        }
+        .container {
+            position: relative;
+            border-radius: 8px;
+            width           : 500px;
+            height          : 80vh;
+            background-color: black;
+            display         : flex;
+            flex-direction  : column;
+            align-items     : stretch;
+            overflow: hidden;
+            z-index: 99;
+        }
+        /* box - after box - in */
+        .box::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* set the box 45deg */
+            transform: translate(-50%, -50%) rotate(45deg);
+            height: 800px;
+            width: 200px;
+            background: #fff;
+            box-shadow: 0 0 10px white,
+            0 0 40px white,
+            0 0 80px white;
+            animation: animate 4s linear infinite;
+        }
+        @keyframes animate {
+            100% {
+                transform: translate(-50%, -50%) rotate(225deg);
+                /* this translate set the box at the senter while rotate using roate() */
+            }
+        }
+        #block1, #block2 {
+            height: 40vh;
+            padding: 5vh;
+        }
+        #block1 {
+            background-color: white;
+            color: black;
+        }
+        img{
+            border: 3px solid silver;
+            border-radius: 5px;
+            width: 170px;
+            height: 170px;
+            position: relative;
+            top: 5vh;
+            left: 5vh;
+        }
+        #block2 {
+            background-color: transparent;
+            text-align: right;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+            <img src="./images (5).jpeg" alt="">
+            <div id="block1">
+                <p>
+                    Celebrating the life of ____________________________________ <br>
+                </p>
+                <p>
+                    <b>A.P.J.Abdul Kalam</b> <br>
+                </p>
+                <p>
+                    <i>15.10.1931 - 27.07.2015</i> <br>
+                </p>
+            </div>
+            <div id="block2">
+                <p>
+                    "Man needs his difficulties because they are necessary <br>
+                    to enjoy success."
+                </p>
+                <p>
+                    <b>11th President of India</b> 
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
